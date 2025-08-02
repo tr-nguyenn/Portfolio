@@ -2,10 +2,161 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-bg: #10375c;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-bg);
+}
+
+/* ========================= common ========================= */
+.container {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ========================= Header ========================= */
+.header {
+  padding: 15px 0;
+  background: var(--color-bg);
+}
+
+.header.fixed {
+  position: sticky;
+  top: 0;
+}
+
+.body-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  margin-right: 5px;
+}
+
+.text-logo {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border-radius: 2px;
+}
+
+.text-logo:hover {
+  color: #00c6ff;
+  cursor: pointer;
+  text-shadow: 0 0 5px rgba(0, 198, 255, 0.7);
+}
+
+.navbar__list {
+  display: flex;
+}
+
+.navbar__link {
+  color: #c9d2da;
+  font-size: 2rem;
+  padding: 10px 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar__link:hover {
+  color: #fff;
+  text-shadow: 1px 0 0 currentColor;
+}
+
+.navbar__link--active {
+  color: #ffff00;
+  text-shadow: 2px 0 0 currentColor;
+}
+
+.navbar__link--active::after {
+  position: absolute;
+  display: inline-block;
+  left: 21px;
+  top: 38px;
+  content: "";
+  width: 35px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffff00;
+}
+
+/* ========================= home ========================= */
+.home {
+  margin-top: 50px;
+}
+
+.home-row {
+  display: flex;
+}
+
+.home__content {
+  width: 65%;
+}
+
+.section-greeting {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  width: fit-content;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.3;
+  animation: typing 4s steps(21, end) 1s forwards, blink 0.7s step-end infinite;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  height: 200px;
+  border-radius: 50%;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16.5ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
